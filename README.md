@@ -1,6 +1,6 @@
 <h1>BatchForm<img src="https://raw.githubusercontent.com/xkmp/BatchForm/master/UI_iocn.png" height="64" width="64" align="left"></img></h1>
 
----
+
 
 # 什么是BatchForm？
 > BatchForm是一个辅助，简化，便捷NukkitX插件开发者进行UI开发的集成工具
