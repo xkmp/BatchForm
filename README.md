@@ -75,7 +75,7 @@ public class CallbackListener implements cn.epicfx.xiaokai.niuppie_form.Callback
 - FFF团长:
   - Mail: keyapi@qq.com
   - QQ: [3zero] 2641541097
-  - GayHub: [Anders](https://github.com/Anders233)
+  - GitHub: [Anders](https://github.com/Anders233)
 
 ### 捐助开发者
 > 在兴趣的驱动下,写一个`免费`的东西，有欣喜，也还有汗水
