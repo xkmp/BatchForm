@@ -65,45 +65,17 @@ public class CallbackListener implements cn.epicfx.xiaokai.niuppie_form.Callback
 ### 问题反馈
 ###### 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 
-### 问题反馈
-###### 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
-<div style="display: inline-block;border-style: outset;padding: 20px;margin : 10px 0px 15px 5px;border-radius:10px;"><center>
-<img src="http://q2.qlogo.cn/headimg_dl?bs=2508543202&dst_uin=2508543202&dst_uin=2508543202&;dst_uin=2508543202&spec=100&url_enc=0&referer=bu_interface&term_type=PC" height="64" width="64" align="center"/>
-</br>
-</br>
-<div style="border-style: solid; border-width: 1px;padding: 5px;border-radius:5px;">
-<font color="blue">帅逼凯</font><b></br>
-</br>
-<Font color="green">Mail: Winfxk@qq.com</font></br>
-</br>
-<font color="red">QQ:2508543202</font></br>
-</br>
-<div style="border-style: solid; border-width: 1px;padding: 5px;border-radius:5px;"><font color="red">GayHub</font>
-</br>
-<font color="red">[WinfXK](https://github.com/WinfXK)</font>
-</div></div>
-</b>
-</center>
-</div>
-<div style="display: inline-block;border-style: outset;padding: 20px;margin : 10px 0px 15px 5px;border-radius:10px;"><center>
-<img src="http://q2.qlogo.cn/headimg_dl?bs=2641541097&dst_uin=2641541097&dst_uin=2641541097&;dst_uin=2641541097&spec=100&url_enc=0&referer=bu_interface&term_type=PC" height="64" width="64" align="center"/>
-</br>
-</br>
-<div style="border-style: solid; border-width: 1px;padding: 5px;border-radius:5px;">
-<font color="blue">FFF团长</font><b></br>
-</br><Font color="green">Mail: keyapi@qq.com</font></br>
-</br>
-<font color="red">QQ:2641541097</font></br>
-</br>
-<div style="border-style: solid; border-width: 1px;padding: 5px;border-radius:5px;">
-<font color="red">GitHub </font>
-</br>
-<font color="red">[Anders](https://github.com/Anders233)</font>
-</div>
-</div>
-</b>
-<center>
-</div>
+![](http://q2.qlogo.cn/headimg_dl?bs=2508543202&dst_uin=2508543202&dst_uin=2508543202&;dst_uin=2508543202&spec=100&url_enc=0&referer=bu_interface&term_type=PC)
+- ~~帅逼~~凯:
+  - Mail: winfxk@qq.com
+  - QQ: [冰月] 2508543202
+  - GayHub: [WinfXK](https://github.com/WinfXK)
+---
+![](http://q2.qlogo.cn/headimg_dl?bs=2641541097&dst_uin=2641541097&dst_uin=2641541097&;dst_uin=2641541097&spec=100&url_enc=0&referer=bu_interface&term_type=PC)
+- FFF团长:
+  - Mail: keyapi@qq.com
+  - QQ: [3zero] 2641541097
+  - GitHub: [Anders](https://github.com/Anders233)
 
 
 ### 捐助开发者
