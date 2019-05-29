@@ -31,7 +31,6 @@ import cn.nukkit.form.window.FormWindow;
 public class CallbackListener implements cn.epicfx.xiaokai.niuppie_form.CallbackListener{
 
 	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = false)
-
 	public void onPlayerForm(PlayerFormRespondedEvent event){
 		Player player = event.getPlayer();
 		int ID = event.getFormID();
@@ -43,11 +42,15 @@ public class CallbackListener implements cn.epicfx.xiaokai.niuppie_form.Callback
 ```
 #### 创建UI，`CustomForm`示例
 ```java
-		CustomForm UI = new CustomForm(9527,"UI标题");
-		UI.addLabel("点击下方输入框输入点什么吧");
-		UI.addInput("一个简单的输入框", "默认输入内容", "占位符");
-		UI.addSlider("一个没什么乱用的滑块", 1, 9);
-		UI.sendPlayer(player);// 有时间补充图片
+
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event){
+	    CustomForm UI = new CustomForm(9527,"UI标题");
+	    UI.addLabel("这是一段文字");
+	    UI.addInput("一个简单的输入框", "默认输入内容", "占位符");
+	    UI.addSlider("一个没什么卵用的滑块", 1, 9);
+	    UI.sendPlayer(player);// 有时间补充图片
+	}
 ```
 
 ### 计划实现功能
