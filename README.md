@@ -42,7 +42,6 @@ public class CallbackListener implements cn.epicfx.xiaokai.niuppie_form.Callback
 ```
 #### 创建UI，`CustomForm`示例
 ```java
-
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
 	    CustomForm UI = new CustomForm(9527,"UI标题");
