@@ -4,7 +4,6 @@
 # 什么是BatchForm？
 
 > BatchForm是一个辅助，简化，便捷NukkitX插件开发者进行UI开发的集成工具
-
 > 插件本身并无任何实质性的功能，若可以，直接将UI包导入您的插件更好哦~ 
 
 # BatchForm有哪些功能？
