@@ -1,29 +1,9 @@
 name: BatchForm
-main: cn.epicfx.xiaokai.niuppie_form.Main
+main: xiaokai.api.form.Main
 api:
 - 1.0.0
-version: 1.0.0
+version: 2.0.0
 load: STARTUP
 website: http://EpicFX.cn
 description: 表单API，方便创建一个界面
-author: EpicFX
-EpicFX:
-   github: https://github.com/xkmp
-   member:
-   - Winfxk
-   - Anders233
-   exploit:
-      major: Winfxk
-      minor: Anders233
-   intro:
-      Winfxk:
-         QQ: 2508543202
-         Email:
-         - Winfxk@QQ.com
-         - Winfxk@gmail.com
-         github: https://github.com/WinfXK
-      Anders233:
-         QQ: 2641541097
-         Email:
-         - 2641541097@QQ.com
-         github: https://github.com/Anders233
+author: Winfxk
