@@ -1,10 +1,12 @@
 package xiaokai.api.form;
 
 import xiaokai.api.form.api.BaseForm;
-import xiaokai.api.form.api.data.Reskey;
 import xiaokai.api.form.api.data.ReskeyCustom;
 import xiaokai.api.form.api.data.ReskeyModal;
 import xiaokai.api.form.api.data.ReskeySimple;
+import xiaokai.api.form.api.lis.CustomCallbackListener;
+import xiaokai.api.form.api.lis.ModalCallbackListener;
+import xiaokai.api.form.api.lis.SimpleCallbackListener;
 import xiaokai.tool.Tool;
 
 import java.util.HashMap;
@@ -26,21 +28,16 @@ public class Main extends PluginBase implements Listener {
 
 	@Override
 	public void onEnable() {
+		main = this;
 		super.onEnable();
 		getServer().getPluginManager().registerEvents(this, this);
-		this.getServer().getLogger().info(Tool.getColorFont("欢迎使用" + getName()));
-	}
-
-	@Override
-	public void onLoad() {
-		main = this;
-		this.getServer().getLogger().info(Tool.getColorFont(getName() + "加载"));
+		this.getServer().getLogger().info(Tool.getColorFont("欢迎使用" + getName() + "！作者：么么哒滴帅比凯；QQ：2508543202"));
 	}
 
 	@Override
 	public void onDisable() {
 		super.onDisable();
-		this.getServer().getLogger().info(Tool.getColorFont(getName() + "关闭"));
+		this.getServer().getLogger().info(Tool.getColorFont(getName() + "关闭！感谢使用~"));
 	}
 
 	/**
@@ -67,6 +64,7 @@ public class Main extends PluginBase implements Listener {
 	public void onPlayerForm(PlayerFormRespondedEvent e) {
 		Player player = e.getPlayer();
 		int ID = e.getFormID();
+		FormResponse da = e.getResponse();
 		if (data.containsKey(player.getName())) {
 			Map<Integer, BaseForm> map = data.get(player.getName());
 			if (map.containsKey(ID)) {
@@ -74,29 +72,21 @@ public class Main extends PluginBase implements Listener {
 				map.remove(ID);
 				data.put(player.getName(), map);
 				if (!form.callback.CallbackEvent(e))
-					form.callback.CallbackReskey(getReskey(player, form, e));
+					switch (form.getType()) {
+					case "Modal":
+						((ModalCallbackListener) form.callback)
+								.CallbackReskey(new ReskeyModal(player, form.ID, da, form));
+						break;
+					case "Custom":
+						((CustomCallbackListener) form.callback)
+								.CallbackReskey(new ReskeyCustom(player, form.ID, da, form));
+						break;
+					case "Simple":
+						((SimpleCallbackListener) form.callback)
+								.CallbackReskey(new ReskeySimple(player, form.ID, da, form));
+						break;
+					}
 			}
 		}
-	}
-
-	/**
-	 * 处理自定义Key
-	 * 
-	 * @param player
-	 * @param ID
-	 * @param e
-	 * @return
-	 */
-	public Reskey getReskey(Player player, BaseForm form, PlayerFormRespondedEvent e) {
-		FormResponse da = e.getResponse();
-		switch (form.getType()) {
-		case "Modal":
-			return new ReskeyModal(player, form.ID, da, form);
-		case "Custom":
-			return new ReskeyCustom(player, form.ID, da, form);
-		case "Simple":
-			return new ReskeySimple(player, form.ID, da, form);
-		}
-		return null;
 	}
 }

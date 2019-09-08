@@ -1,6 +1,7 @@
 package xiaokai.api.form.api;
 
 import xiaokai.api.form.Main;
+import xiaokai.api.form.api.lis.CallbackListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +44,7 @@ public abstract class BaseForm {
 		this.ID = ID;
 		this.Title = Title;
 	}
+
 	/**
 	 * 发送一个界面给一个服务器所有在线玩家
 	 * 
@@ -53,9 +55,11 @@ public abstract class BaseForm {
 		List<Player> players = new ArrayList<>();
 		for (UUID obj : map.keySet()) {
 			Player player = map.get(obj);
-			if (player != null && player.isOnline())
+			if (player != null && player.isOnline()) {
 				if (callback != null)
 					Main.main.putForm(this, player);
+				player.showFormWindow(getFormWindow(), getID());
+			}
 		}
 		return sendPlayer(players);
 	}
@@ -68,9 +72,11 @@ public abstract class BaseForm {
 	 */
 	public int sendPlayer(Player... player) {
 		for (Player p : player)
-			if (p != null && p.isOnline())
+			if (p != null && p.isOnline()) {
 				if (callback != null)
 					Main.main.putForm(this, p);
+				p.showFormWindow(getFormWindow(), getID());
+			}
 		return ID;
 	}
 
@@ -82,9 +88,11 @@ public abstract class BaseForm {
 	 */
 	public int sendPlayer(List<Player> player) {
 		for (Player p : player)
-			if (p != null && p.isOnline())
+			if (p != null && p.isOnline()) {
 				if (callback != null)
 					Main.main.putForm(this, p);
+				p.showFormWindow(getFormWindow(), getID());
+			}
 		return ID;
 	}
 

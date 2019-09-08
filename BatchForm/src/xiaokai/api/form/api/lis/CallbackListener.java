@@ -1,6 +1,4 @@
-package xiaokai.api.form.api;
-
-import xiaokai.api.form.api.data.Reskey;
+package xiaokai.api.form.api.lis;
 
 import cn.nukkit.event.player.PlayerFormRespondedEvent;
 
@@ -17,13 +15,4 @@ public interface CallbackListener {
 	 * @return
 	 */
 	public abstract boolean CallbackEvent(PlayerFormRespondedEvent e);
-
-	/**
-	 * 返回自定义数据
-	 * 
-	 * @param reskey    返回的数据内容
-	 * @param wasClosed 玩家是点击提交的界面还是关闭了界面
-	 * @return
-	 */
-	public abstract boolean CallbackReskey(Reskey reskey);
 }

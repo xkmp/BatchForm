@@ -1,5 +1,7 @@
 package xiaokai.api.form.api;
 
+import xiaokai.api.form.api.lis.ModalCallbackListener;
+
 import cn.nukkit.form.window.FormWindow;
 import cn.nukkit.form.window.FormWindowModal;
 
@@ -16,7 +18,7 @@ public class ModalForm extends BaseForm {
 	 * @param Title            界面标题
 	 * @param callbackListener 回调对象
 	 */
-	public ModalForm(int ID, String Title, CallbackListener callbackListener) {
+	public ModalForm(int ID, String Title, ModalCallbackListener callbackListener) {
 		super(ID, Title, callbackListener);
 	}
 
@@ -74,7 +76,7 @@ public class ModalForm extends BaseForm {
 	 * @param Content          界面内容
 	 * @param callbackListener 回调对象
 	 */
-	public ModalForm(int ID, String Title, String Content, CallbackListener callbackListener) {
+	public ModalForm(int ID, String Title, String Content, ModalCallbackListener callbackListener) {
 		this(ID, Title, Content, "§6确定", "§4取消", callbackListener);
 	}
 
@@ -113,7 +115,7 @@ public class ModalForm extends BaseForm {
 	 * @param callbackListener 回调对象
 	 */
 	public ModalForm(int ID, String Title, String Content, String trueButtonText, String falseButtonText,
-			CallbackListener callbackListener) {
+			ModalCallbackListener callbackListener) {
 		this(ID, Content, callbackListener);
 		this.Content = Content;
 		this.trueButtonText = trueButtonText;

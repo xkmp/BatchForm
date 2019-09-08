@@ -58,7 +58,7 @@ public class ReskeySimple extends Reskey {
 	public String getString(Object obj, String string) {
 		for (int i = 0; i < form.getKeys().size(); i++)
 			if (form.getKeys().get(i).equals(obj))
-				return form.getKeys().get(i);
+				return form.getButtons().get(i).getText();
 		return string;
 	}
 

@@ -1,5 +1,8 @@
 package xiaokai.api.form.api;
 
+import xiaokai.api.form.api.lis.SimpleCallbackListener;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.nukkit.form.element.ElementButton;
@@ -12,8 +15,17 @@ import cn.nukkit.form.window.FormWindowSimple;
  */
 public class SimpleForm extends BaseForm {
 	private String Content = "";
-	private List<ElementButton> Buttons;
-	private List<String> Keys;
+	private List<ElementButton> Buttons = new ArrayList<>();
+	private List<String> Keys = new ArrayList<>();
+
+	/**
+	 * 获取按钮列表
+	 * 
+	 * @return
+	 */
+	public List<ElementButton> getButtons() {
+		return Buttons;
+	}
 
 	/**
 	 * 按钮界面
@@ -22,7 +34,7 @@ public class SimpleForm extends BaseForm {
 	 * @param Title            界面的标题
 	 * @param callbackListener 回调对象
 	 */
-	public SimpleForm(int ID, String Title, CallbackListener callbackListener) {
+	public SimpleForm(int ID, String Title, SimpleCallbackListener callbackListener) {
 		super(ID, Title, callbackListener);
 	}
 
@@ -59,7 +71,7 @@ public class SimpleForm extends BaseForm {
 	 * @param ID               界面的ID
 	 * @param callbackListener 回调对象
 	 */
-	public SimpleForm(int ID, CallbackListener callbackListener) {
+	public SimpleForm(int ID, SimpleCallbackListener callbackListener) {
 		this(ID, "", callbackListener);
 	}
 
@@ -71,7 +83,7 @@ public class SimpleForm extends BaseForm {
 	 * @param Content          界面文本内容
 	 * @param callbackListener 回调对象
 	 */
-	public SimpleForm(int ID, String Title, String Content, CallbackListener callbackListener) {
+	public SimpleForm(int ID, String Title, String Content, SimpleCallbackListener callbackListener) {
 		this(ID, Title, callbackListener);
 		this.Content = Content;
 	}
@@ -119,9 +131,10 @@ public class SimpleForm extends BaseForm {
 	 * @return
 	 */
 	public SimpleForm addButton(String Text, boolean isLocal, String Path, String Key) {
-		Buttons.add(new ElementButton(Text, new ElementButtonImageData(
-				isLocal ? ElementButtonImageData.IMAGE_DATA_TYPE_PATH : ElementButtonImageData.IMAGE_DATA_TYPE_URL,
-				Path)));
+		Buttons.add(Path == null ? new ElementButton(Text)
+				: new ElementButton(Text,
+						new ElementButtonImageData(isLocal ? ElementButtonImageData.IMAGE_DATA_TYPE_PATH
+								: ElementButtonImageData.IMAGE_DATA_TYPE_URL, Path)));
 		Keys.add(Key);
 		return this;
 	}

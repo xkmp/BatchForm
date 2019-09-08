@@ -1,5 +1,7 @@
 package xiaokai.api.form.api;
 
+import xiaokai.api.form.api.lis.CustomCallbackListener;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -58,7 +60,7 @@ public class CustomForm extends BaseForm {
 	 * @param Icon             界面内提交按钮的贴图，若无请设置为null
 	 * @param callbackListener 事件处理类
 	 */
-	public CustomForm(int ID, String Title, String Icon, CallbackListener callbackListener) {
+	public CustomForm(int ID, String Title, String Icon, CustomCallbackListener callbackListener) {
 		this(ID, Title, callbackListener);
 		this.Icon = Icon == null ? null : new ElementButtonImageData(ElementButtonImageData.IMAGE_DATA_TYPE_URL, Icon);
 	}
@@ -70,7 +72,7 @@ public class CustomForm extends BaseForm {
 	 * @param Title            界面的标题
 	 * @param callbackListener 事件处理类
 	 */
-	public CustomForm(int ID, String Title, CallbackListener callbackListener) {
+	public CustomForm(int ID, String Title, CustomCallbackListener callbackListener) {
 		super(ID, Title, callbackListener);
 	}
 
@@ -136,7 +138,7 @@ public class CustomForm extends BaseForm {
 	 * @return
 	 */
 	public CustomForm addInput(String text, String Default, String Hint, String Key) {
-		list.add(new ElementInput(text, Hint, Default));
+		list.add(new ElementInput(text, Hint == null ? "" : Hint, Default == null ? "" : Default));
 		Keys.add(Key);
 		return this;
 	}
