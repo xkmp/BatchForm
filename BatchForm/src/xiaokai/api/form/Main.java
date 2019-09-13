@@ -7,8 +7,10 @@ import xiaokai.api.form.api.data.ReskeySimple;
 import xiaokai.api.form.api.lis.CustomCallbackListener;
 import xiaokai.api.form.api.lis.ModalCallbackListener;
 import xiaokai.api.form.api.lis.SimpleCallbackListener;
-import xiaokai.tool.Tool;
+import xiaokai.api.form.tool.Tool;
+import xiaokai.api.form.tool.Update;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -20,16 +22,27 @@ import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerFormRespondedEvent;
 import cn.nukkit.form.response.FormResponse;
 import cn.nukkit.plugin.PluginBase;
+import cn.nukkit.utils.Config;
 
 @SuppressWarnings("unchecked")
 public class Main extends PluginBase implements Listener {
 	private LinkedHashMap<String, Map<Integer, BaseForm>> data = new LinkedHashMap<>();
 	public static Main main;
+	private Config config;
 
 	@Override
 	public void onEnable() {
 		main = this;
+		if (!getDataFolder().exists())
+			getDataFolder().mkdirs();
+		config = new Config(new File(getDataFolder(), "Config.yaml"), Config.YAML);
+		if (config.get("检查更新") == null) {
+			config.set("检查更新", true);
+			config.set("检查更新间隔", 3600);
+			config.save();
+		}
 		super.onEnable();
+		new MyThread().start();
 		getServer().getPluginManager().registerEvents(this, this);
 		this.getServer().getLogger().info(Tool.getColorFont("欢迎使用" + getName() + "！作者：么么哒滴帅比凯；QQ：2508543202"));
 	}
@@ -86,6 +99,29 @@ public class Main extends PluginBase implements Listener {
 								.CallbackReskey(new ReskeySimple(player, form.ID, da, form));
 						break;
 					}
+			}
+		}
+	}
+
+	class MyThread extends Thread {
+		private int Time = 0;
+
+		@Override
+		public void run() {
+			while (true) {
+				try {
+					sleep(1000);
+					if (!config.getBoolean("检查更新"))
+						continue;
+					if (Time < 0) {
+						Time = config.getInt("检查更新间隔");
+						Time = Time <= 10 ? 60 : Time;
+						new Update(main).start();
+					} else
+						Time--;
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}

@@ -2,7 +2,7 @@ package xiaokai.api.form.api.data;
 
 import xiaokai.api.form.api.BaseForm;
 import xiaokai.api.form.api.CustomForm;
-import xiaokai.tool.Tool;
+import xiaokai.api.form.tool.Tool;
 
 import cn.nukkit.Player;
 import cn.nukkit.form.element.Element;

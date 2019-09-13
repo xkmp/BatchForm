@@ -2,7 +2,7 @@ name: BatchForm
 main: xiaokai.api.form.Main
 api:
 - 1.0.0
-version: 2.0.0
+version: 2.0.1
 load: STARTUP
 website: http://EpicFX.cn
 description: 表单API，方便创建一个界面
