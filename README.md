@@ -76,10 +76,10 @@ public class CallbackListener implements cn.epicfx.xiaokai.niuppie_form.Callback
   - GayHub: [WinfXK](https://github.com/WinfXK)
 ---
 ![](http://q2.qlogo.cn/headimg_dl?bs=2641541097&dst_uin=2641541097&dst_uin=2641541097&;dst_uin=2641541097&spec=100&url_enc=0&referer=bu_interface&term_type=PC)
-- FFF团长:
-  - Mail: keyapi@qq.com
+- Code3zero:
+  - Mail: 3zeroed@gmail.com
   - QQ: [3zero] 2641541097
-  - GitHub: [Anders](https://github.com/Anders233)
+  - GitHub: [3zero](https://github.com/3zeroed)
 
 
 ### 捐助开发者
